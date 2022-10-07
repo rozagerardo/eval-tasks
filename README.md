@@ -78,3 +78,13 @@ public class MyEntityDto extends ReviewableDto<MyEntity> {
 
 You can use the different `ReviewableDto` constructor options to customize how you want the reviews to be presented.
 
+For instance, here we're indicating we want the reviews to be retrieved showing the higher rated comments first:
+
+```
+private MyEntityDto(MyEntity entity) {
+    super(entity, ReviewsOrder.HIGHER);
+    this.id = entity.getId();
+    this.firstName = entity.getField1();
+    this.lastName = entity.getField2();
+}
+```
