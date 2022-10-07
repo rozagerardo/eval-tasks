@@ -26,7 +26,7 @@ public abstract class ReviewableEntity implements Reviewable, Serializable {
 	private final String reviewableType = this.getClass().getName();
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
