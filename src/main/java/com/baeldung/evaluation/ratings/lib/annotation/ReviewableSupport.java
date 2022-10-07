@@ -9,6 +9,10 @@ import org.springframework.context.annotation.Import;
 
 import com.baeldung.evaluation.ratings.lib.config.RatingsConfig;
 
+/**
+ *
+ * @author rozagerardo
+ */
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Import(RatingsConfig.class)

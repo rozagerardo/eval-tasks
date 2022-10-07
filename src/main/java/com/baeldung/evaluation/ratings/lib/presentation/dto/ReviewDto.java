@@ -2,30 +2,34 @@ package com.baeldung.evaluation.ratings.lib.presentation.dto;
 
 import java.time.LocalDateTime;
 
+/**
+ *
+ * @author rozagerardo
+ */
 public class ReviewDto {
 
-	private final String description;
+    private final String description;
 
-	private final Integer rating;
+    private final Integer rating;
 
-	private final LocalDateTime date;
+    private final LocalDateTime date;
 
-	public ReviewDto(String description, Integer rating, LocalDateTime date) {
-		super();
-		this.description = description;
-		this.rating = rating;
-		this.date = date;
-	}
+    public ReviewDto(String description, Integer rating, LocalDateTime date) {
+        super();
+        this.description = description;
+        this.rating = rating;
+        this.date = date;
+    }
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public Integer getRating() {
-		return rating;
-	}
+    public Integer getRating() {
+        return rating;
+    }
 
-	public LocalDateTime getDate() {
-		return date;
-	}
+    public LocalDateTime getDate() {
+        return date;
+    }
 }

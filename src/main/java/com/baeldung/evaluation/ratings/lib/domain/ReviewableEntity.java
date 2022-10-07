@@ -17,51 +17,55 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.OneToMany;
 
+/**
+ *
+ * @author rozagerardo
+ */
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class ReviewableEntity implements Reviewable, Serializable {
 
-	private static final long serialVersionUID = 1622357429438514992L;
+    private static final long serialVersionUID = 1622357429438514992L;
 
-	private final String reviewableType = this.getClass().getName();
+    private final String reviewableType = this.getClass()
+        .getName();
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumns({ @JoinColumn(name = "reviewableId", referencedColumnName = "id"),
-			@JoinColumn(name = "type", referencedColumnName = "reviewableType") })
-	private List<Review> reviews = new ArrayList<>();
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumns({ @JoinColumn(name = "reviewableId", referencedColumnName = "id"), @JoinColumn(name = "type", referencedColumnName = "reviewableType") })
+    private List<Review> reviews = new ArrayList<>();
 
-	@Override
-	public List<Review> getReviews() {
-		return this.reviews;
-	}
+    @Override
+    public List<Review> getReviews() {
+        return this.reviews;
+    }
 
-	public String getReviewableType() {
-		return reviewableType;
-	}
+    public String getReviewableType() {
+        return reviewableType;
+    }
 
-	@Override
-	public void addReview(Review review) {
-		this.reviews.add(review);
-	}
+    @Override
+    public void addReview(Review review) {
+        this.reviews.add(review);
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(reviews);
-	}
+    @Override
+    public int hashCode() {
+        return Objects.hash(reviews);
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		ReviewableEntity other = (ReviewableEntity) obj;
-		return Objects.equals(reviews, other.reviews);
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        ReviewableEntity other = (ReviewableEntity) obj;
+        return Objects.equals(reviews, other.reviews);
+    }
 }
