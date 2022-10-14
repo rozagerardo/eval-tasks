@@ -74,7 +74,7 @@ public class MyEntityDto extends ReviewableDto<MyEntity> {
     }
 ```
 
-### Customizing the Reviews Presentation
+### Customizing the Reviews Output
 
 You can use the different `ReviewableDto` constructor options to customize how you want the reviews to be presented.
 
