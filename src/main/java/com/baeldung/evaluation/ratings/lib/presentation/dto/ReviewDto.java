@@ -12,9 +12,9 @@ public class ReviewDto {
 
     private final Integer rating;
 
-    private final LocalDateTime date;
+    private final String date;
 
-    public ReviewDto(String description, Integer rating, LocalDateTime date) {
+    public ReviewDto(String description, Integer rating, String date) {
         super();
         this.description = description;
         this.rating = rating;
@@ -29,7 +29,7 @@ public class ReviewDto {
         return rating;
     }
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return date;
     }
 }
